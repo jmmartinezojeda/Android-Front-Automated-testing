@@ -77,8 +77,10 @@ public class Utils {
         try
         {
             //capabilities
-            final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
-            url = new URL(URL_STRING);
+            //Maquina Windows local
+            //final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
+            //Maquina MAC PRE
+            final String URL_STRING = "http://0.0.0.0:4723/wd/hub";
             sistemaOperativo = "ANDROID";
 
             capabilities = new DesiredCapabilities();
