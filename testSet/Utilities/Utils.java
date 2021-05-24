@@ -47,7 +47,10 @@ public class Utils {
     public void Instanciador_iOS(){
         try
         {
-            final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
+            //Maquina Windows local
+            //final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
+            //Maquina MAC PRE
+            final String URL_STRING = "http://0.0.0.0:4723/wd/hub";
             url = new URL(URL_STRING);
 
             capabilities = new DesiredCapabilities();
