@@ -87,19 +87,19 @@ public class Utils {
             ///-> Seleccionar uno de los 2 métodos:
 
             ///->1. Inicio de APP instalada en el dispositivo emulado
-
+/*
             capabilities.setCapability("appPackage", "com.radmas.iycp.casiopea.pre");
             capabilities.setCapability("automationName","UiAutomator2");
             capabilities.setCapability("appActivity", "com.radmas.iycp.presentation.launcher.LauncherActivity");
             ///Sentencia Reiniciar(false)/No Reiniciar(true) la APP
             capabilities.setCapability("noReset", false);
-
+*/
 
             ///->2. Inicio para instalar APP desde un directorio
             ///Local
             //capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\temporal\\Documents\\GitHub\\quiron-app-automation\\apk\\app-casiopeaPre-debug.apk");
             ///Maquina MAC-PRE
-            //capabilities.setCapability(MobileCapabilityType.APP, "Users\\casiopea.mobility\\app-casiopeaPre-debug.apk");
+            capabilities.setCapability(MobileCapabilityType.APP, "Users\\casiopea.mobility\\app-casiopeaPre-debug.apk");
 
             ///Appium logs
             //capabilities.setCapability("browserstack.appiumLogs", "true");
