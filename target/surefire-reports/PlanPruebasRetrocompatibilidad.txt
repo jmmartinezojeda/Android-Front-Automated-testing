@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: PlanPruebasRetrocompatibilidad
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 337.844 s <<< FAILURE! - in PlanPruebasRetrocompatibilidad
+PlanPruebasRetrocompatibilidad.Android_Hospitalizacion_03  Time elapsed: 15.493 s  <<< FAILURE!
+org.openqa.selenium.StaleElementReferenceException: 
+The element 'By.id: com.radmas.iycp.casiopea.pre:id/text_search_edit_text' does not exist in DOM anymore
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'GFI12425', ip: '10.160.178.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: com.radmas.iycp.presentatio..., appPackage: com.radmas.iycp.casiopea.pre, automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.radmas.iycp.presentatio..., appPackage: com.radmas.iycp.casiopea.pre, automationName: UiAutomator2, deviceName: emulator-5554, platformName: android, platformVersion: 9}, deviceApiLevel: 28, deviceManufacturer: Google, deviceModel: AOSP on IA Emulator, deviceName: emulator-5554, deviceScreenDensity: 240, deviceScreenSize: 720x1520, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 1.5, platform: LINUX, platformName: Android, platformVersion: 9, statBarHeight: 36, takesScreenshot: true, viewportRect: {height: 1412, left: 0, top: 36, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 77530b88-d993-4a06-85e6-2ab60b6080be
+	at PlanPruebasRetrocompatibilidad.Android_Hospitalizacion_03(PlanPruebasRetrocompatibilidad.java:215)
+
+PlanPruebasRetrocompatibilidad.Android_Hospitalizacion_04  Time elapsed: 85.964 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at PlanPruebasRetrocompatibilidad.Android_Hospitalizacion_04(PlanPruebasRetrocompatibilidad.java:256)
+

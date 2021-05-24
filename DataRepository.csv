@@ -1,0 +1,47 @@
+﻿###DATAREPOSITORY-NUMOBJETS:16 -> [TestID;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#] <- ###
+TESTID;usuarioLoginUno;versionApp;usuarioLoginDos;passwordLoginDos;centroPorDefecto;listaCentrosUsuario;centroCambio;estacionDefecto;buscarPacienteNombre;buscarPacienteNhc;doctorPaciente;telefonoPaciente;numResulH;asignacionSeleccionada;ElementoListaSeleccion;ambitoGlosario;opcionesFiltroHistoria;resultadoFiltroHistoria
+###FP###
+Android_FP_001;adalvarez.ext;Versión 4.0.125;#;#;#;#;#;#;#;#;#
+Android_FP_002_1;#;#;adalvarez.ext;AutoQuiron1;HOSPITAL INFANTA ELENA;HOSPITAL INFANTA ELENA,HOSPITAL REY JUAN CARLOS,FUNDACION JIMENEZ DIAZ,HOSPITAL GENERAL DE VILLALBA;HOSPITAL INFANTA ELENA;Hospitalizacion;#;#;#
+Android_FP_002_2;#;#;adalvarez.ext;AutoQuiron1;HOSPITAL REY JUAN CARLOS;HOSPITAL INFANTA ELENA,HOSPITAL REY JUAN CARLOS,FUNDACION JIMENEZ DIAZ,HOSPITAL GENERAL DE VILLALBA;HOSPITAL INFANTA ELENA;Hospitalizacion;#;#;#
+Android_FP_003;#;#;#;#;#;#;#;#;#;#;#
+Android_FP_006;#;#;#;#;#;HOSPITAL INFANTA ELENA,HOSPITAL REY JUAN CARLOS,FUNDACION JIMENEZ DIAZ,HOSPITAL GENERAL DE VILLALBA;HOSPITAL REY JUAN CARLOS;Urgencias;#;#;#;#;#;#
+Android_FP_008;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;#;#;#;#
+Android_FP_009;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;#;#;#;#
+###P###
+Android_P_010;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;#;#;#;#
+Android_P_003_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;Urgencias
+Android_P_003_2;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;#;#;#;#;#
+###PI###
+Android_PI_001;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;#;#;#;#
+Android_PI_002;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;Teresa Ribeiro;#;#;#
+Android_PI_003;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;Teresa Ribeiro;#;#;#
+###H###
+Android_H_003_1;#;#;#;#;#;#;#;#;#;#;#;#;0;#;#;#
+Android_H_006_4_1;#;#;#;#;#;#;#;#;#;#;#;#;#;Mis pacientes;#;#
+Android_H_006_4_2;#;#;#;#;#;#;#;#;#;#;#;#;#;TODO;#;#
+Android_H_006_6_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;BR L, LORENA;#
+Android_H_006_6_2;#;#;#;#;#;#;#;#;#;#;#;#;#;#;CE AM, EDGARDO;#
+Android_H_009_1;#;#;#;#;#;#;#;#;#;#;#;#;2;#;#;#
+Android_H_009_2;#;#;#;#;#;#;#;#;#;#;#;#;30;#;#;#
+Android_H_009_3;#;#;#;#;#;#;#;#;#;#;#;#;1;#;#;#
+Android_H_009_4;#;#;#;#;#;#;#;#;#;#;#;#;42;#;#;#
+Android_H_009_5;#;#;#;#;#;#;#;#;#;#;#;#;13;#;#;#
+Android_H_004_4_1;#;#;#;#;#;#;#;#;#;#;#;#;#;CIRUGÍA GENERAL Y DIGESTIVO;#;#
+Android_H_004_4_2;#;#;#;#;#;#;#;#;#;#;#;#;#;TODO;#;#
+Android_H_004_2_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;CIRUGÍA GENERAL Y DIGESTIVO;#
+Android_H_004_2_2;#;#;#;#;#;#;#;#;#;#;#;#;#;#;CARDIOLOGÍA;#
+Android_H_005_2_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;UE-CIRUGÍA MAYOR AMBULATORIA;#
+Android_H_005_2_2;#;#;#;#;#;#;#;#;#;#;#;#;#;#;UE-HOSP. OBSTÉTRICA;#
+Android_H_005_2_3;#;#;#;#;#;#;#;#;#;#;#;#;#;#;UE-HOSP. PEDIÁTRICA;#
+Android_H_005_4_1;#;#;#;#;#;#;#;#;#;#;#;#;#;TODO;#;#
+###P_H###
+Android_PH_012_2_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;NO,SI,NO,NO,NO;#
+Android_PH_012_2_2;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;NO,NO,NO,SI,NO;#
+Android_PH_012_2_3;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;NO,NO,NO,NO,NO;#
+Android_PH_012_3_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;2
+Android_PH_012_3_2;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;1
+Android_PH_012_3_3;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;5
+Android_PH_010;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;#;#;#;#
+
+
