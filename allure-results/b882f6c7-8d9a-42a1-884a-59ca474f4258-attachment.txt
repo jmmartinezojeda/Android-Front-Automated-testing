@@ -1,0 +1,2 @@
+Se pudieron recuperar los valores del fichero de Objetos: ObjectRepository.csv
+-----------------------------------------------

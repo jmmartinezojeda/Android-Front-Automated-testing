@@ -88,7 +88,8 @@ public class FlujoPrincipalConditions {
             Utils.SearchAndroidElement("Mapa.BorrarBuscar").isDisplayed();
             // Comprobar nombre rellenado
             Assert.assertEquals(Utils.SearchAndroidElement("Mapa.InputBuscar").getText(), buscarPaciente);
-            commonActions.PrintReportMessage("P<ciente Rellenado correctamente en Buscar");
+            Assert.assertTrue(Utils.SearchAndroidElement("Mapa.BorrarBuscar").isDisplayed());
+            commonActions.PrintReportMessage("Paciente Rellenado correctamente en Buscar");
         }catch(AssertionError e){
             commonActions.CapturadorExcepcion("RellenadoMapaBuscador.png", "Paciente Rellenado incorrectamente en Buscar");
             throw e;
@@ -165,6 +166,22 @@ public class FlujoPrincipalConditions {
             commonActions.PrintReportMessage("Se muestra la pantalla de introducir código SMS");
         }catch(Exception e){
             CommonActions.CapturadorExcepcion("PulsadoBotonLoginUno.png", "No se muestra la pantalla de introducir código SMS");
+            throw e;
+        }
+    }
+
+    /**
+     * <p> Método para comprobar que el botón Root Uno se ha pulsado </p>
+     * @throws Exception
+     */
+    public void PulsadoBotonRoot(){
+        try {
+            //En pantalla aparece un pop up con un mensaje de error dispositovo con root
+            String texto = "Ha ocurrido un error al intentar cargar los datos. Intentalo más tarde.";
+            Utils.SearchAndroidElement("LoginUno.BotonRoot");
+            commonActions.PrintReportMessage("Se muestra un popup con un mensaje de error dispotivo con Root");
+        }catch(Exception e){
+            CommonActions.CapturadorExcepcion("PulsadoBotonRoot.png", "No aparece el popup con un mensaje de error dispotivo con Root");
             throw e;
         }
     }
@@ -254,7 +271,8 @@ public class FlujoPrincipalConditions {
      */
     public void MostradoLoginDos(){
 
-        //Se comprueba si se muestra el pop-up de root
+        //Se comprueba
+        //String texto = "Ha ocurrido un error al intentar cargar los datos. Intentalo más tarde.";
         String texto = "Se ha detectado que el dispositivo tiene root. Se recomienda usar la aplicación en dispositivos sin él para su seguridad. Si continúa, es bajo su propia responsabilidad.";
         commonActions.ComprobarErrorDialog(texto);
         try {

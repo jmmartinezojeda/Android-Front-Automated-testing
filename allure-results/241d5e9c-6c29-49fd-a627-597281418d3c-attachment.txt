@@ -1,0 +1,2 @@
+La pantalla Glosario Urgencias NO coincide con la barra de título: Glosario Hospitalizacion
+-----------------------------------------------

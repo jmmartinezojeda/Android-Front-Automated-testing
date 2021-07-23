@@ -25,6 +25,7 @@ public class HospitalizacionAndroid {
     public PInfoPacienteConditions pInfoPacienteConditions;
     public HospitalizacionActions hospitalizacionActions;
     public HospitalizacionConditions hospitalizacionConditions;
+    //Instanciar clases de test
     //Variables
     public String estacion;
 
@@ -52,9 +53,11 @@ public class HospitalizacionAndroid {
     /**
      * android-H-001 - Hospitalización - Acceso a "Hospitalizacion"
      * Precondition: android-FP-002
-     */
+    */
 
     public void Android_H_001(){
+        FlujoPrincipalAndroid flujoPrincipalAndroid = new FlujoPrincipalAndroid();
+        flujoPrincipalAndroid.Android_FP_002("Android_FP_002_1");
         String testId = "Android_H_001";
         //*****TEST
         //Step_1
@@ -62,7 +65,6 @@ public class HospitalizacionAndroid {
         commonActions.AccederEstacion(this.estacion);
         // Se muestra la pestaña como seleccionada.
         commonConditions.AccesoEstacion(this.estacion);
-
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
 
@@ -73,6 +75,7 @@ public class HospitalizacionAndroid {
      * Precondition: android-H-001
      */
     public void Android_H_002(){
+        Android_H_001();
         String testId = "Android_H_002";
         //*****TEST
         //Step_1
@@ -90,8 +93,9 @@ public class HospitalizacionAndroid {
      * android-H-003 - Hospitalización - Filtro por defecto no eliminado
      * Precondition: android-H-001
      */
-    public void Android_H_003(String id){
-        String testId = id;
+    public void Android_H_003(){
+        Android_H_001();
+        String testId = "Android_H_003_1";
         //*****TEST
         //Step_1
         // No se modifica el filtro por defecto
@@ -110,45 +114,67 @@ public class HospitalizacionAndroid {
     }
 
     /**
-     * android-H-009 - Hospitalización - Filtro por defecto eliminado
-     * Precondition: android-H-007
+     * android-H-004_1 - Hospitalización - Desplegar lista Servicios
+     * Precondition: android-H-002
      */
-    public void Android_H_009(String id){
+    public void Android_H_004_1() {
+        Android_H_002();
+        String testId = "Android_H_004_1";
+        //*****TEST
+        //Step_1
+        //Se hace clic en Desplegar lista de servicios
+        hospitalizacionActions.PlegarDesplegarLista("Servicio");
+        //La lista se despliega correctamente y se muestran lo distintos Servicios
+        Assert.assertTrue(hospitalizacionConditions.PlegadaDesplegadaServicio());
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId + ".png", testId + " - OK");
+    }
+
+    /**
+     * android-H-004_2 - Hospitalización - Seleccionar/Deseleccionar Servicio
+     * Precondition: android-H-004_1
+     * @param selecDeselec Se usa TRUE para seleccionar y FALSE para deseleccionar elemento de la lista
+     */
+ /*  public void Android_H_004_2(String id) {
+        Android_H_004_1();
+        String testId = id;
+
+        String servicio = dataRepo.getDataFromRepository(testId,"ElementoListaSeleccion");
+        //*****TEST
+        //Step_1
+        //Deseleccionar un SPOR HACERervicio
+        hospitalizacionActions.SeleccionarDeseleccionarServicio(servicio);
+        hospitalizacionConditions.SeleccionadoDeseleccionadoServicio(servicio, false);
+        //Step_1
+        //Seleccionar un Servicio
+        hospitalizacionActions.SeleccionarDeseleccionarServicio(servicio);
+        hospitalizacionConditions.SeleccionadoDeseleccionadoServicio(servicio, true);
+
+        //**************
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }*/
+
+    /**
+     * android-H-004_4 - Hospitalización - Eliminar Servicios
+     * Precondition: android-H-002
+     */
+    public void Android_H_004_4(String id) {
+        Android_H_002();
         String testId = id;
         //*****TEST
         //Step_1
-        // Se modifica el filtro por defecto
-
-        // El icono del filtro se muestra con el punto rojo
-        String numResulH = dataRepo.getDataFromRepository(testId,"numResulH");
-        commonConditions.ComprobarResultadosPacientes(numResulH);
-
-        //Comprobar que el icono está con el punto rojo (Return False)
-        Assert.assertTrue(commonConditions.FiltroPorDefecto("Mapa.Filtro"));
+        //Pulsar sobre la "X" de un servicio
+        String asignacionSeleccionada = dataRepo.getDataFromRepository(testId,"asignacionSeleccionada");
+        hospitalizacionActions.EliminarSeleccionFiltro(asignacionSeleccionada, "Servicio");
+        //Se comprueba que el servicio desaparece de la lista
+        //habilitar el mismo método para qu devuleva mensaje de que no se encuentra el elemento
 
 
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
-    }
-
-
-
-    /**
-     * android-H-006_1 - Hospitalización - Desplegar lista Asignación
-     * Precondition: android-H-002
-     */
-    public void Android_H_006_1() {
-             String testId = "Android_H_006_1";
-            //*****TEST
-            //Step_1
-            //Se hace clic en Desplegar lista de Asignacion
-            hospitalizacionActions.PlegarDesplegarLista("Asignación");
-            //La lista se despliega correctamente y se muestran "Mis pacientes" y seleccionar medico
-            Assert.assertTrue(hospitalizacionConditions.PlegadaDesplegadaAsignacion());
-
-            //*Reporte del caso de prueba
-            commonActions.CapturadorExcepcion(testId + ".png", testId + " - OK");
-
     }
 
     /**
@@ -156,6 +182,7 @@ public class HospitalizacionAndroid {
      * Precondition: android-H-002
      */
     public void Android_H_005_1() {
+        Android_H_002();
         String testId = "Android_H_005_1";
         //*****TEST
         //Step_1
@@ -170,20 +197,64 @@ public class HospitalizacionAndroid {
     }
 
     /**
-     * android-H-004_1 - Hospitalización - Desplegar lista Servicios
-     * Precondition: android-H-002
+     * android-H-005_2 - Hospitalización - Seleccionar/Deseleccionar UDE
+     * Precondition: android-H-005_1
+     * @param selecDeselec Se usa TRUE para seleccionar y FALSE para deseleccionar elemento de la lista
      */
-    public void Android_H_004_1() {
-        String testId = "Android_H_004_1";
+    public void Android_H_005_2(String id, boolean selecDeselec) {
+        Android_H_005_1();
+        String testId = id;
         //*****TEST
         //Step_1
-        //Se hace clic en Desplegar lista de servicios
-        hospitalizacionActions.PlegarDesplegarLista("Servicio");
-        //La lista se despliega correctamente y se muestran lo distintos Servicios
-        Assert.assertTrue(hospitalizacionConditions.PlegadaDesplegadaServicio());
+        //Seleccionar/Deseleccionar un UDE
+        String elemento = dataRepo.getDataFromRepository(testId,"ElementoListaSeleccion");
+        boolean estado = commonActions.SeleccionarDeseleccionarElementoLista(elemento, "Unidad de enfermeria");
+        //El UDE se Selecciona/Deselecciona correctamente
+        Assert.assertEquals(estado,selecDeselec);
+        //**************
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }
+
+    /**
+     * android-H-005_4 - Hospitalización - Eliminar UDE
+     * Precondition: android-H-002
+     */
+    public void Android_H_005_4(String id) {
+        Android_H_002();
+        String testId = id;
+        //*****TEST
+        //Step_1
+        //Se hace clic en la X de un UDE
+        String asignacionSeleccionada = dataRepo.getDataFromRepository(testId,"asignacionSeleccionada");
+        hospitalizacionActions.EliminarSeleccionFiltro(asignacionSeleccionada, "Unidad de enfermeria");
+        //El UDE desaparece de la lista
+        //habilitar el mismo método para que devuleva mensaje de que no se encuentra el elemento **************
+
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }
+
+
+    /**
+     * android-H-006_1 - Hospitalización - Desplegar lista Asignación
+     * Precondition: android-H-002
+     */
+    public void Android_H_006_1() {
+        Android_H_002();
+        String testId = "Android_H_006_1";
+        //*****TEST
+        //Step_1
+        //Se hace clic en Desplegar lista de Asignacion
+        hospitalizacionActions.PlegarDesplegarLista("Asignación");
+        //La lista se despliega correctamente y se muestran "Mis pacientes" y seleccionar medico
+        Assert.assertTrue(hospitalizacionConditions.PlegadaDesplegadaAsignacion());
 
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId + ".png", testId + " - OK");
+
     }
 
     /**
@@ -212,10 +283,12 @@ public class HospitalizacionAndroid {
      * Precondition: android-H-002
      */
     public void Android_H_006_3() {
+        Android_H_002();
         String testId = "Android_H_006_3";
         //*****TEST
         //Step_1
         //Se hace clic en Plegar lista de Asignacion
+        hospitalizacionActions.PlegarDesplegarLista("Asignación");
         hospitalizacionActions.PlegarDesplegarLista("Asignación");
         //La lista se pliega correctamente y deja de mostrarse. Se muestran los elementos seleccionados en la lista
         Assert.assertTrue(!hospitalizacionConditions.PlegadaDesplegadaAsignacion());
@@ -230,6 +303,7 @@ public class HospitalizacionAndroid {
      * Precondition: android-H-002
      */
     public void Android_H_006_4(String id) {
+        Android_H_002();
         String testId = id;
         //*****TEST
         //Step_1
@@ -245,49 +319,13 @@ public class HospitalizacionAndroid {
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
 
-    /**
-     * android-H-005_4 - Hospitalización - Eliminar UDE
-     * Precondition: android-H-002
-     */
-    public void Android_H_005_4(String id) {
-        String testId = id;
-        //*****TEST
-        //Step_1
-        //Se hace clic en la X de un UDE
-        String asignacionSeleccionada = dataRepo.getDataFromRepository(testId,"asignacionSeleccionada");
-        hospitalizacionActions.EliminarSeleccionFiltro(asignacionSeleccionada, "Unidad de enfermeria");
-        //El UDE desaparece de la lista
-        //habilitar el mismo método para que devuleva mensaje de que no se encuentra el elemento **************
-
-
-        //*Reporte del caso de prueba
-        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
-    }
-
-    /**
-     * android-H-004_4 - Hospitalización - Eliminar Servicios
-     * Precondition: android-H-002
-     */
-    public void Android_H_004_4(String id) {
-        String testId = id;
-        //*****TEST
-        //Step_1
-        //Pulsar sobre la "X" de un servicio
-        String asignacionSeleccionada = dataRepo.getDataFromRepository(testId,"asignacionSeleccionada");
-        hospitalizacionActions.EliminarSeleccionFiltro(asignacionSeleccionada, "Servicio");
-        //Se comprueba que el servicio desaparece de la lista
-        //habilitar el mismo método para qu devuleva mensaje de que no se encuentra el elemento
-
-
-        //*Reporte del caso de prueba
-        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
-    }
 
     /**
      * android-H-006_5 - Hospitalización - Abrir lista medico
      * Precondition: android-H-006_1
      */
     public void Android_H_006_5() {
+        Android_H_006_1();
         String testId = "Android_H_006_5";
         //*****TEST
         //Step_1
@@ -305,6 +343,7 @@ public class HospitalizacionAndroid {
      * @param selecDeselec Se usa TRUE para seleccionar y FALSE para deseleccionar elemento de la lista
      */
     public void Android_H_006_6(String id, boolean selecDeselec) {
+        Android_H_006_5();
         String testId = id;
         //*****TEST
         //Step_1
@@ -320,50 +359,11 @@ public class HospitalizacionAndroid {
     }
 
     /**
-     * android-H-005_2 - Hospitalización - Seleccionar/Deseleccionar UDE
-     * Precondition: android-H-005_1
-     * @param selecDeselec Se usa TRUE para seleccionar y FALSE para deseleccionar elemento de la lista
-     */
-    public void Android_H_005_2(String id, boolean selecDeselec) {
-        String testId = id;
-        //*****TEST
-        //Step_1
-        //Seleccionar/Deseleccionar un UDE
-        String elemento = dataRepo.getDataFromRepository(testId,"ElementoListaSeleccion");
-        boolean estado = commonActions.SeleccionarDeseleccionarElementoLista(elemento, "Unidad de enfermeria");
-        //El UDE se Selecciona/Deselecciona correctamente
-        Assert.assertEquals(estado,selecDeselec);
-        //**************
-
-        //*Reporte del caso de prueba
-        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
-    }
-
-    /**
-     * android-H-004_2 - Hospitalización - Seleccionar/Deseleccionar Servicio
-     * Precondition: android-H-004_1
-     * @param selecDeselec Se usa TRUE para seleccionar y FALSE para deseleccionar elemento de la lista
-     */
-    public void Android_H_004_2(String id, boolean selecDeselec) {
-        String testId = id;
-        //*****TEST
-        //Step_1
-        //Seleccionar/Deseleccionar un Servicio
-        String elemento = dataRepo.getDataFromRepository(testId,"ElementoListaSeleccion");
-        boolean estado = commonActions.SeleccionarDeseleccionarElementoLista(elemento, "Unidad de enfermeria");
-        //El servicio se Selecciona/Deselecciona correctamente
-        Assert.assertEquals(estado,selecDeselec);
-        //**************
-
-        //*Reporte del caso de prueba
-        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
-    }
-
-    /**
      * android-H-006_7 - Hospitalización - Volver atrás
      * Precondition: android-H-006_5
      */
     public void Android_H_006_7() {
+        Android_H_006_5();
         String testId = "Android_H_006_7";
         //*****TEST
         //Step_1
@@ -381,6 +381,7 @@ public class HospitalizacionAndroid {
      * Precondition: android-H-006_5
      */
     public void Android_H_006_8() {
+        Android_H_006_5();
         String testId = "Android_H_006_8";
         //*****TEST
         //Step_1
@@ -401,6 +402,7 @@ public class HospitalizacionAndroid {
      * Precondition: android-H-002
      */
     public void Android_H_007() {
+        Android_H_002();
         String testId = "Android_H_007";
         //*****TEST
         //Step_1
@@ -419,6 +421,7 @@ public class HospitalizacionAndroid {
      * Precondition: android-H-002
      */
     public void  Android_H_008() {
+        Android_H_002();
         String testId = "Android_H_008";
         //*****TEST
         //Step_1
@@ -450,22 +453,65 @@ public class HospitalizacionAndroid {
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
 */
-
     /**
-     * android-AA_Abrir usuario
+     * android-H-009 - Hospitalización - Filtro por defecto eliminado
+     * Precondition: android-H-007
      */
-/*
-    @Test (description = "android_FP-023", enabled = true)
-    public void android_FP_023() throws Exception {
-        commonActions.AccederEstacion("Hospitalizacion");
-        commonActions.BorrarFiltroInicial();
+    public void Android_H_009(String id){
+        Android_H_007();
+        String testId = id;
+        //*****TEST
+        //Step_1
+        // Se modifica el filtro por defecto
+
+        // El icono del filtro se muestra con el punto rojo
+        String numResulH = dataRepo.getDataFromRepository(testId,"numResulH");
+        commonConditions.ComprobarResultadosPacientes(numResulH);
+
+        //Comprobar que el icono está con el punto rojo (Return False)
+        Assert.assertTrue(commonConditions.FiltroPorDefecto("Mapa.Filtro"));
 
 
         //*Reporte del caso de prueba
-        commonActions.ReporteEjecucion();
-
-
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
-*/
+
+    /**
+     * android-H-010 - Hospitalización - Listado pacientes vacío
+     * Precondition: android-H-003 - android-H-009
+     */
+    public void Android_H_010(String id){
+        String testId = id;
+        //*****TEST
+        //Step_1
+        // En el listado de pacientes no tiene ningún paciente
+
+        // Se muestra un mensaje de que no hay pacientes con el filtro actual
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }
+    /**
+     * android-H-011 - Hospitalización - Listado pacientes
+     * Precondition: android-H-003 - android-H-009
+     */
+    public void Android_H_011(String id){
+        String testId = id;
+        //*****TEST
+        //Step_1
+        // En el listado de pacientes se muestra una lista de pacientes
+
+        // Cada paciente debe mostrar:
+        //Nombre del paciente
+        //Motivo de ingreso
+        //Recurso
+        //Servicio en el que está ingresado el paciente
+        //Edad del paciente
+        //Tiempo que lleva ingresado el paciente
+
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }
 
 }

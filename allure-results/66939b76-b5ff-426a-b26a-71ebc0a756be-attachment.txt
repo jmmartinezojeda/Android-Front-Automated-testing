@@ -1,0 +1,2 @@
+El filtro por defecto está activado
+-----------------------------------------------

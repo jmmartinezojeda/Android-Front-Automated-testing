@@ -1,0 +1,2 @@
+No se encuentra el campo centro seleccionado
+-----------------------------------------------

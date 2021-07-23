@@ -25,17 +25,17 @@ public class FlujoPrincipalAndroid {
     public FlujoPrincipalActions flujoPrincipalActions;
     public FlujoPrincipalConditions flujoPrincipalConditions;
     //Variables
-    public String usuario_login_uno = "adalvarez.ext";
-    public String usuario_login_dos = "adalvarez.ext";
-    public String password_login_dos = "QIP25yup--3";
-    public String primer_centro_login_dos = "HOSPITAL INFANTA ELENA";
-    public String[] lista_centros_login_dos = {"HOSPITAL INFANTA ELENA", "HOSPITAL REY JUAN CARLOS", "HOSPITAL GENERAL DE VILLALBA", "FUNDACION JIMENEZ DIAZ"};
-    public String[] lista_centros_login_dos_cambio = {"HOSPITAL INFANTA ELENA", "HOSPITAL REY JUAN CARLOS", "FUNDACION JIMENEZ DIAZ", "HOSPITAL GENERAL DE VILLALBA"};
+    public String usuario_login_uno = "delega6";
+    public String usuario_login_dos = "delega6";
+    public String password_login_dos = "Cambiar.2020";
+    public String primer_centro_login_dos = "FUNDACION JIMENEZ DIAZ";
+    public String[] lista_centros_login_dos = {"FUNDACION JIMENEZ DIAZ", "HOSPITAL INFANTA ELENA", "HOSPITAL REY JUAN CARLOS", "HOSPITAL GENERAL DE VILLALBA", "Hospital Quironsalud Cordoba", "Hospital QuironSalud del Valles", "Hospital Quironsalud Vitoria"};
+    public String[] lista_centros_login_dos_cambio = {"FUNDACION JIMENEZ DIAZ", "HOSPITAL INFANTA ELENA", "HOSPITAL REY JUAN CARLOS", "HOSPITAL GENERAL DE VILLALBA", "Hospital Quironsalud Cordoba", "Hospital QuironSalud del Valles", "Hospital Quironsalud Vitoria"};
     public String buscar_paciente_nombre= "NO TOCAR PREUBAS AUTOMATICAS MOBILITY";
     public String buscar_paciente_nhc= "20012430";
 
-    public String centro_login_dos = "HOSPITAL INFANTA ELENA";
-    public String centro_cambio_hospital = "HOSPITAL REY JUAN CARLOS";
+    public String centro_login_dos = "FUNDACION JIMENEZ DIAZ";
+    public String centro_cambio_hospital = "HOSPITAL INFANTA ELENA";
     //1-Hospitalizacion
     //2-Urgencias
     //3-Consultas
@@ -93,7 +93,13 @@ public class FlujoPrincipalAndroid {
         // Se muestra la pantalla "Login dos" y la version correcta de la APP
         flujoPrincipalConditions.MostradoLoginDos();
 
-        //String versionApp= dataRepo.getDataFromRepository(testId,"versionApp");
+        //Step_temporallity
+        // Seleccionar el boton error root
+        //flujoPrincipalActions.PulsarBotonRoot();
+        // Campo relleno correctamente
+        //flujoPrincipalConditions.PulsadoBotonRoot();
+
+      //String versionApp= dataRepo.getDataFromRepository(testId,"versionApp");
         //flujoPrincipalConditions.MostradoVersionCorrecta(versionApp);
         flujoPrincipalConditions.MostradoVersion();
 
@@ -108,6 +114,7 @@ public class FlujoPrincipalAndroid {
      */
 
     public void Android_FP_002(String id) {
+        Android_FP_001();
         String testId = id;
         //*****TEST
         //Step_1
@@ -117,8 +124,8 @@ public class FlujoPrincipalAndroid {
         flujoPrincipalActions.RellenarLoginDos(usuarioLoginDos, passwordLoginDos);
         //La lista desplegable de selección de centro selecciona automaticamente centroPorDefecto y
         // se comprueban que los campos se han rellenado correctamente
-            String centroPorDefecto = dataRepo.getDataFromRepository(testId, "centroPorDefecto");
-            centroActual = centroPorDefecto; //Selecciona como centro actual el centro por defecto del usuario
+        String centroPorDefecto = dataRepo.getDataFromRepository(testId, "centroPorDefecto");
+        centroActual = centroPorDefecto; //Selecciona como centro actual el centro por defecto del usuario
 
         flujoPrincipalConditions.SeleccionadoCentro(centroActual);
         flujoPrincipalConditions.RellenadoLoginDos(usuarioLoginDos, passwordLoginDos);
@@ -142,8 +149,6 @@ public class FlujoPrincipalAndroid {
         String estacionDefecto = dataRepo.getDataFromRepository(testId,"estacionDefecto");
         flujoPrincipalConditions.MostradoInicio(estacionDefecto);
 
-
-
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
@@ -153,13 +158,14 @@ public class FlujoPrincipalAndroid {
      * Precondition: android-FP-002
      */
     public void Android_FP_003(){
+        Android_FP_002("Android_FP_002_1");
         String testId = "Android_FP_003";
         //*****TEST
         //Step_1
         //Click en el botón "Más", representado por "+"
         flujoPrincipalActions.PulsarMasFP();
         //Se despliega una lista con las distintas opciones disponibles
-                                                                                            //centroActual = "HOSPITAL INFANTA ELENA";//--------------------------------------------->BORRAR (Usar solo cuando no se haga login uno)
+       //centroActual = "HOSPITAL INFANTA ELENA";//--------------------------------------------->BORRAR (Usar solo cuando no se haga login uno)
         flujoPrincipalConditions.PulsadoMasFP(centroActual);
 
         //*Reporte del caso de prueba
@@ -171,6 +177,7 @@ public class FlujoPrincipalAndroid {
      * Precondition: android-FP-003
      */
     public void Android_FP_004() {
+        Android_FP_003();
         String testId = "Android_FP_004";
         //*****TEST
         //Step_1
@@ -189,6 +196,7 @@ public class FlujoPrincipalAndroid {
      * Precondition: android-FP-003
      */
     public void Android_FP_005() {
+        Android_FP_003();
         String testId = "Android_FP_005";
         //*****TEST
         //Step_1
@@ -208,6 +216,7 @@ public class FlujoPrincipalAndroid {
      */
 
     public void Android_FP_006(){
+        Android_FP_003();
         String testId = "Android_FP_006";
         //*****TEST
         //Step_1
@@ -242,6 +251,7 @@ public class FlujoPrincipalAndroid {
      * Precondition: android-FP-002
      */
     public void Android_FP_007(){
+        Android_FP_002("Android_FP_002_1");
         String testId = "Android_FP_007";
         //*****TEST
         //Step_1
@@ -260,35 +270,38 @@ public class FlujoPrincipalAndroid {
      * android-FP-008 - Flujo Principal - Mapa-Buscar Nombre
      * Precondition: android-FP-007
      */
-/*
-    public void Android_FP_008(){
+
+  public void Android_FP_008(){
+        Android_FP_007();
         String testId = "Android_FP_008";
         //*****TEST
         //Step_1
         //Rellenar el campo buscar con buscar_paciente
         String buscarPacienteNombre = dataRepo.getDataFromRepository(testId,"buscarPacienteNombre");
-        flujoPrincipalActions.RellenarMapaBuscador(buscarPacienteNombre);
+        flujoPrincipalActions.RellenarMapaBuscadorPacienteNombre(buscarPacienteNombre);
         //Campo buscar relleno correctamente con buscarPacienteNombre
         flujoPrincipalConditions.RellenadoMapaBuscador(buscarPacienteNombre);
 
         //Step_2
         //Pulsar "Enter" en el teclado numérico
+        commonActions.TapEnterKeyboard();
         //flujoPrincipalActions.BuscarMapaBuscador();
         //Se muestra un listado de pacientes como resultado de la búsqueda. En cada paciente se muestra: Nombre del paciente, edad e icono.
-        //flujo_principalConditions.BuscadoMapaBuscador(buscar_paciente);
+        //flujoPrincipalConditions.BuscadoMapaBuscador(buscar_paciente);
         //--------------->VISUALIZAR PACIENTE
 
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
-*/
+
+
     /**
      * android-FP-009 - Flujo Principal - Mapa-Buscar NHC
      * Precondition: android-FP-007
      */
 
-
     public void Android_FP_009(){
+        Android_FP_007();
         String testId = "Android_FP_009";
         //*****TEST
         //Step_1
@@ -297,7 +310,6 @@ public class FlujoPrincipalAndroid {
         flujoPrincipalActions.RellenarMapaBuscador(buscarPacienteNhc);
         //Campo buscar relleno correctamente con buscarPacienteNhc
         flujoPrincipalConditions.RellenadoMapaBuscador(buscarPacienteNhc);
-
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
@@ -307,6 +319,7 @@ public class FlujoPrincipalAndroid {
      * Precondition: android-FP-002
      */
     public void Android_FP_010(){
+        Android_FP_002("Android_FP_002_1");
         String testId = "Android_FP_010";
         //*****TEST
         //Step_1
@@ -325,6 +338,7 @@ public class FlujoPrincipalAndroid {
      * Precondition: android-FP-002
      */
     public void Android_FP_011(){
+        Android_FP_002("Android_FP_002_1");
         String testId = "Android_FP_011";
         //*****TEST
         //Step_1
@@ -332,7 +346,6 @@ public class FlujoPrincipalAndroid {
         flujoPrincipalActions.PulsarConversaciones();
         //Se abre la pantalla notificaciones correctamente con todos los elementos que debe mostrar
         flujoPrincipalConditions.PulsadoConversaciones();
-
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
@@ -355,24 +368,20 @@ public class FlujoPrincipalAndroid {
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
 */
-    /**
-     * android-IC-011 - Interconsultas - Menu Interconsultas
-     * Precondition: android-FP-003
-     */
-    public void Android_IC_001(){
-        String testId = "Android_IC_001";
-        //*****TEST
-        //Step_1
-        //Click en "Interconsultas", representado por el icono de la campana
-        flujoPrincipalActions.PulsarInterconsultas();
-        //Se abre la pantalla interconsultas correctamente con todos los elementos que debe mostrar
-        commonConditions.ComprobarBarraTitulo("Interconsultas");
+
+
+/*
+    @Test (description = "android_FP-023", enabled = true)
+    public void android_FP_023() throws Exception {
+        commonActions.AccederEstacion("Hospitalizacion");
+        commonActions.BorrarFiltroInicial();
 
 
         //*Reporte del caso de prueba
-        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+        commonActions.ReporteEjecucion();
+
+
     }
-
-
+*/
 
 }

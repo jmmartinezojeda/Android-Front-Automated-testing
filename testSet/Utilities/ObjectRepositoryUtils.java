@@ -72,7 +72,7 @@ public class ObjectRepositoryUtils {
             //return database[objectName][1];
             return database.get(objectName).get(1);
         } catch (NullPointerException npe) {
-            commonActions.PrintReportMessage("Excepción NULL. DEvuelve un NULL del repositorio");
+            commonActions.PrintReportMessage("Excepción NULL. Devuelve un NULL del repositorio");
             throw npe;
         }catch (Exception e){
             commonActions.PrintReportMessage("ERROR Repositorio de Objetos. Identificador de objeto: "+objectName+". No se encuentra en el repositorio de Objetos");

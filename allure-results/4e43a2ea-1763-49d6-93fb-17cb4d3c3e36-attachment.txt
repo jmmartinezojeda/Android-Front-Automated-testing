@@ -1,0 +1,2 @@
+INICIO proceso eliminar elementos
+-----------------------------------------------

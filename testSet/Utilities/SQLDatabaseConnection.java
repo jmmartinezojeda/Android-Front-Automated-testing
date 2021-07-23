@@ -42,9 +42,9 @@ public class SQLDatabaseConnection {
 
             //driver
             //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            //DriverManager.registerDriver(new com.microsoft.sqlserver.jdbc.SQLServerDriver());
-            //DriverManager.registerDriver(new SQLServerDriver());
             DriverManager.registerDriver(new com.microsoft.sqlserver.jdbc.SQLServerDriver());
+            //DriverManager.registerDriver(new SQLServerDriver());
+            //DriverManager.registerDriver(new com.microsoft.sqlserver.jdbc.SQLServerDriver());
             //Class.forName("com.mysql.jdbc.Driver");
 
             //Conexion
@@ -63,10 +63,12 @@ public class SQLDatabaseConnection {
 
             //Ejecución QUERY
             String selectSql="SELECT top (1) [VerifyCode]\n" +
-                    "FROM [Casiopea.MS.Security].[Security].[VerifyCode] v with (nolock)\n" +
-                    "inner join [Casiopea.MS.Security].[Security].[User] u with (nolock) on u.Id=v.UserId\n" +
-                    "where UserName = 'adalvarez.ext'\n" +
+                    "FROM [Casiopea.MS.WhiteList].[WhiteList].[VerifyCode] v with (nolock)\n" +
+                    "inner join [Casiopea.MS.WhiteList].[WhiteList].[User] u with (nolock) on u.Id=v.UserId\n" +
+                    "where UserName = 'delega6'\n" +
                     "order by v.InsertDate DESC";
+
+
             // v with (nolock)
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery(selectSql);

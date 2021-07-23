@@ -1,0 +1,2 @@
+Se muestra correctamente el numero de pacientes: 0
+-----------------------------------------------

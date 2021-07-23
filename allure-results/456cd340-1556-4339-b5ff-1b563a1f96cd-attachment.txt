@@ -1,0 +1,2 @@
+Se muestra la pantalla de introducir código SMS
+-----------------------------------------------

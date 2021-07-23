@@ -1,0 +1,2 @@
+El textod el mensaje de error no es correcto: Se ha detectado que el dispositivo tiene root. Se recomienda usar la aplicación en dispositivos sin él para su seguridad. Si continúa, es bajo su propia responsabilidad.
+-----------------------------------------------

@@ -122,5 +122,23 @@ public class HospitalizacionConditions {
         }
     }
 
+        /**
+       * <p> Método para comprobar que el switch "Mis pacientes" está o no marcado </p>
+         * @return desplegado TRUE pulsado FALSE NO pulsado
+         * @throws Exception
+         */
+ /*  public boolean SeleccionadoDeseleccionadoServicio(String servicio, Boolean selectDeselect) {
+
+        try {
+            // Comprobar que está en el estado selecDeselect
+            boolean estado = commonActions.SeleccionarDeseleccionarElementoLista(servicio, "Unidad de enfermeria");
+            //El servicio se Selecciona/Deselecciona correctamente
+            Assert.assertEquals(estado,selectDeselect);
+        }catch(Exception e){
+            CommonActions.CapturadorExcepcion("PulsadoSwitchAsignacion.png", "ERROR con el switch Mis pacientes. No se encuentra el elemento en la pantalla");
+            throw e;
+        }
+        return pulsado;
+    }*/
 
 }

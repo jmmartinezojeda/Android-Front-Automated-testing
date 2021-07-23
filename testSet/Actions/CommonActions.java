@@ -47,9 +47,10 @@ public class CommonActions {
         captura = 0;
         touchAction = new TouchAction(androidDriver);
         commonConditions = Utils.GetCommonConditions();
-        enterKeyCoor = new int[]{660,1388};
+        enterKeyCoor = new int[]{644, 1374};
     }
-
+              // cordenadas del finalizar para llamar paciente
+              // (new TouchAction(driver)).tap(617, 1075).perform()
     /**
      * <p> Método para comprobar si se muestra el pop-up de error y lo cierra </p>
      * @throws NoSuchElementException

@@ -1,0 +1,2 @@
+No se ha podido realizar correctamente la conexión a la BD
+-----------------------------------------------

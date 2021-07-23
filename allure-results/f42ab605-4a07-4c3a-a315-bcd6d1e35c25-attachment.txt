@@ -1,0 +1,2 @@
+'Ver menos' información del paciente se muestra correctamente
+-----------------------------------------------

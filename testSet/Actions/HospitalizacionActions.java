@@ -143,4 +143,23 @@ public class HospitalizacionActions {
     }
 
 
+    /**
+     * <p> Método para pulsar el botón que abre la lista de selección de médico" </p>
+     * @throws Exception
+     */
+
+ /*   public void SeleccionarDeseleccionarServicio(String servicio) {
+        try{
+            // Deseleccionamos CARDIOLOGÍA
+            Utils.SearchAndroidElement("H.Filtro.Medico").click();
+            commonActions.PrintReportMessage("Se pulsa sobre abrir lista médico correctamente");
+            EliminarSeleccionFiltro(String asignacion, ElementoListaSeleccion);
+            // Seleccionamos CARDIOLOGÍA
+
+        } catch (Exception e) {
+            commonActions.CapturadorExcepcion("AbrirListaMedico.png", "ERROR al intentar pulsar abrir lista médico");
+            throw e;
+        }
+    }*/
+
 }

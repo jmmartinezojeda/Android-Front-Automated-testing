@@ -1,0 +1,2 @@
+Se rellenó correctamente el input Buscar con el valor: 339382
+-----------------------------------------------

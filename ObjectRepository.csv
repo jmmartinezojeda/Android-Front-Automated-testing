@@ -21,12 +21,15 @@ LoginUno.Input;ID;com.radmas.iycp.casiopea.pre:id/user_name_edit_text
 Login.Boton;ID;com.radmas.iycp.casiopea.pre:id/log_in_button
 LoginUno.TextoConfirmacion;XPATH;//*[@text='Te hemos enviado un SMS o un mensaje a tu correo electrónico corporativo con el código de confirmación']
 ###LoginDos###
+LoginUno.BotonRoot;ID;com.radmas.iycp.casiopea.pre:id/error_dialog_ok_button
 LoginDos.InputUser;ID;com.radmas.iycp.casiopea.pre:id/nickname_edit_text
 LoginDos.InputPass;ID;com.radmas.iycp.casiopea.pre:id/password_edit_text
 LoginDos.VerPass;ID;com.radmas.iycp.casiopea.pre:id/show_password
+
 LoginDos.ListCentro;ID;com.radmas.iycp.casiopea.pre:id/hospital_spinner
-LoginDos.ListCentroDesplegada;XPATH;/android.widget.TextView
 LoginDos.ListCentroSelect;ID;com.radmas.iycp.casiopea.pre:id/description_text_view
+LoginDos.ListCentroDesplegada;XPATH;/android.widget.TextView
+
 ###MAS-FP###
 Mas.Boton;A_ID;Más
 Mas.BarraTitulo;ID;com.radmas.iycp.casiopea.pre:id/toolbar_title_text_view
@@ -34,6 +37,7 @@ Mas.CambioCentro;ID;com.radmas.iycp.casiopea.pre:id/hospital_change
 Mas.LlamarASoporte;ID;com.radmas.iycp.casiopea.pre:id/call
 Mas.Desconectar;ID;com.radmas.iycp.casiopea.pre:id/log_out
 Mas.ListCentroDesplegada;XPATH;/android.widget.LinearLayout/android.widget.TextView
+
 ###Mapa###
 Mapa.Boton;A_ID;Pacientes
 Mapa.MenuEstaciones;ID;com.radmas.iycp.casiopea.pre:id/areas_list_holder
@@ -46,10 +50,12 @@ Mapa.BarraFecha;ID;com.radmas.iycp.casiopea.pre:id/tag_layout
 Mapa.Filtro;ID;com.radmas.iycp.casiopea.pre:id/navigate_to_filter_config_image_View
 Mapa.ContadorPacientes;ID;com.radmas.iycp.casiopea.pre:id/patients_count_text_view
 Mapa.SinPacientes;ID;com.radmas.iycp.casiopea.pre:id/no_patients_message_text_view
+
 #####Paciente#####
 Paciente.Otros;ID;com.radmas.iycp.casiopea.pre:id/more_options_image_view
 Paciente.Otros.Glosario;XPATH;//android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView
 Paciente.Otros.Llamar;XPATH;//android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView
+
 ###P - Info Paciente###
 Paciente.BarraTitulo;ID;com.radmas.iycp.casiopea.pre:id/toolbar_title_text_view
 Info.ExpandBoton;ID;com.radmas.iycp.casiopea.pre:id/expand_patient_info_button
@@ -57,6 +63,7 @@ Info.ExpandInfo;ID;com.radmas.iycp.casiopea.pre:id/patient_info_expandable_part
 Info.NHC;ID;com.radmas.iycp.casiopea.pre:id/patient_diagnosis_text_view
 Info.Doctor;ID;com.radmas.iycp.casiopea.pre:id/doctor_name_text_view
 Info.Telefono;ID;com.radmas.iycp.casiopea.pre:id/patient_phone_number_second_level
+
 ###Historia###
 Historia.Boton;A_ID;Historia
 Historia.Filtro;A_ID;Filtros
@@ -66,12 +73,16 @@ Historia.Alergias;A_ID;Alergias
 Historia.Alergias.Titulo;ID;com.radmas.iycp.casiopea.pre:id/allergies_title_text_view
 Historia.Evolucion;A_ID;Evolución %1$s
 Historia.Evolucion.Titulo;ID;com.radmas.iycp.casiopea.pre:id/medical_progress_toolbar
+
 ###Prescripciones###
 Prescripciones.Boton;A_ID;Prescripciones
+
 ###Peticiones###
 Peticiones.Boton;A_ID;Peticiones
+
 ###Acciones###
 Acciones.Boton;A_ID;Acciones
+
 ###Hopitalizacion###
 H.Filtro.Asignacion;ID;com.radmas.iycp.casiopea.pre:id/assignation_info_lay
 H.Filtro.Asignacion.Switch;ID;com.radmas.iycp.casiopea.pre:id/assigned_to_me_switch

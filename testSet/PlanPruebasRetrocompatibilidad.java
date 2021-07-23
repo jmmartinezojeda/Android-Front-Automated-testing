@@ -105,7 +105,6 @@ public class PlanPruebasRetrocompatibilidad {
 
       flujoPrincipalAndroid.Android_FP_011();
       flujoPrincipalAndroid.Android_FP_010();
-      flujoPrincipalAndroid.Android_IC_001();
       flujoPrincipalAndroid.Android_FP_003();
       flujoPrincipalAndroid.Android_FP_006();
       flujoPrincipalAndroid.Android_FP_005();
@@ -123,6 +122,7 @@ public class PlanPruebasRetrocompatibilidad {
      *** Login
      */
 
+
     @Test (description = "Hospitalizacion-01 Login", enabled = true, priority = 3)
     public void Android_Hospitalizacion_01(){
         flujoPrincipalAndroid.Android_FP_002("Android_FP_002_2");
@@ -138,7 +138,7 @@ public class PlanPruebasRetrocompatibilidad {
         public void Android_Hospitalizacion_02 () {
 
             hospitalizacionAndroid.Android_H_001();
-            hospitalizacionAndroid.Android_H_003("Android_H_003_1");
+            hospitalizacionAndroid.Android_H_003();
             hospitalizacionAndroid.Android_H_002();
             hospitalizacionAndroid.Android_H_006_4("Android_H_006_4_1");
             hospitalizacionAndroid.Android_H_006_1();
@@ -167,7 +167,7 @@ public class PlanPruebasRetrocompatibilidad {
             hospitalizacionAndroid.Android_H_002();
             hospitalizacionAndroid.Android_H_005_4("Android_H_005_4_1");
             hospitalizacionAndroid.Android_H_004_1();
-            hospitalizacionAndroid.Android_H_004_2("Android_H_004_2_1", true);
+        //    hospitalizacionAndroid.Android_H_004_2("Android_H_004_2_1", true);
             //MEDICO
             hospitalizacionAndroid.Android_H_006_1();
             hospitalizacionAndroid.Android_H_006_5();
@@ -179,7 +179,7 @@ public class PlanPruebasRetrocompatibilidad {
             //10
             hospitalizacionAndroid.Android_H_002();
             hospitalizacionAndroid.Android_H_004_1();
-            hospitalizacionAndroid.Android_H_004_2("Android_H_004_2_2",true);
+        //    hospitalizacionAndroid.Android_H_004_2("Android_H_004_2_2",true);
             hospitalizacionAndroid.Android_H_006_4("Android_H_006_4_2");
             hospitalizacionAndroid.Android_H_007();
             hospitalizacionAndroid.Android_H_009("Android_H_009_4");
@@ -199,9 +199,9 @@ public class PlanPruebasRetrocompatibilidad {
             hospitalizacionAndroid.Android_H_006_1();
             hospitalizacionAndroid.Android_H_006_2(true);
             hospitalizacionAndroid.Android_H_004_1();
-            hospitalizacionAndroid.Android_H_004_2("Android_H_004_2_1",true);
+          //  hospitalizacionAndroid.Android_H_004_2("Android_H_004_2_1",true);
             hospitalizacionAndroid.Android_H_007();
-            hospitalizacionAndroid.Android_H_003("Android_H_003_1");
+            hospitalizacionAndroid.Android_H_003();
 
         //hospitalizacionAndroid.Android_H_006_4();
         //hospitalizacionAndroid.Android_H_007();
@@ -215,14 +215,14 @@ public class PlanPruebasRetrocompatibilidad {
         pacienteAndroid.Android_P_010();
         pInfoPacienteAndroid.Android_PI_001();
         pInfoPacienteAndroid.Android_PI_002();
-        //pInfoPacienteAndroid.Android_PI_003();
+        pInfoPacienteAndroid.Android_PI_003();
         pInfoPacienteAndroid.Android_PI_004();
         pInfoPacienteAndroid.Android_PI_005();
         pacienteAndroid.Android_P_002();
         pacienteAndroid.Android_P_003_1();
         pacienteAndroid.Android_P_003_2();
-        //pacienteAndroid.Android_P_002();
-        //pacienteAndroid.Android_P_004();
+        pacienteAndroid.Android_P_002();
+        pacienteAndroid.Android_P_004();
         pacienteAndroid.Android_P_005();
 
     }

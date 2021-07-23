@@ -42,6 +42,8 @@ public class PInfoPacienteAndroid {
      */
 
     public void Android_PI_001(){
+        PacienteAndroid pacientelAndroid = new PacienteAndroid();
+        pacientelAndroid.Android_P_010();
         String testId = "Android_PI_001";
         //*****TEST
         //Step_1
@@ -49,7 +51,6 @@ public class PInfoPacienteAndroid {
         pInfoPacienteActions.PulsarInfoPaciente();
         // Se despliega la información del paciente.
         pInfoPacienteConditions.PulsadoExpandInfo();
-
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
 
@@ -61,6 +62,7 @@ public class PInfoPacienteAndroid {
      */
 
     public void Android_PI_002(){
+        Android_PI_001();
         String testId = "Android_PI_002";
         //*****TEST
         //Step_1
@@ -68,7 +70,6 @@ public class PInfoPacienteAndroid {
         pInfoPacienteActions.PulsarExpandInfo();
         // Se despliega la información completa del paciente.
         pInfoPacienteConditions.PulsadoExpandInfo();
-
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
 
@@ -80,6 +81,7 @@ public class PInfoPacienteAndroid {
      */
 
     public void Android_PI_003(){
+        Android_PI_002();
         String testId = "Android_PI_003";
         //*****TEST
         //Step_1
@@ -88,7 +90,7 @@ public class PInfoPacienteAndroid {
         // Se procede con la llamada al paciente
         String telefonoPaciente = dataRepo.getDataFromRepository(testId,"telefonoPaciente");
         commonConditions.PulsadoLlamarPaciente(telefonoPaciente);
-
+        commonActions.TapCoordenadas(617, 1075);
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
 
@@ -99,6 +101,7 @@ public class PInfoPacienteAndroid {
      * Precondition: android-PI-002
      */
     public void Android_PI_004(){
+        Android_PI_002();
         String testId = "Android_PI_004";
         //*****TEST
         //Step_1
@@ -117,6 +120,7 @@ public class PInfoPacienteAndroid {
      */
 
     public void Android_PI_005(){
+        Android_PI_001();
         String testId = "Android_PI_005";
         //*****TEST
         //Step_1
@@ -127,6 +131,94 @@ public class PInfoPacienteAndroid {
 
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }
 
+    /**
+     * android-PI-006 - P - Info Paciente - Acceso a Información de Paciente
+     * Precondition: android-P-006
+     */
+
+    public void Android_PI_006(){
+        Android_PI_001();
+        String testId = "Android_PI_006";
+        //*****TEST
+        //Step_1
+        // Click sobre el nombre del paciente en la barrra azul.
+
+        // Se despliega la información del paciente.
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }
+
+    /**
+     * android-PI-007 - P - Info Paciente - Acceso a Información de Paciente
+     * Precondition: android-P-007
+     */
+
+    public void Android_PI_007(){
+        Android_PI_001();
+        String testId = "Android_PI_007";
+        //*****TEST
+        //Step_1
+        // Click sobre el nombre del paciente en la barrra azul.
+
+        // Se despliega la información del paciente.
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }
+
+    /**
+     * android-PI-008 - P - Info Paciente - Acceso a Información de Paciente
+     * Precondition: android-P-008
+     */
+
+    public void Android_PI_008(){
+        Android_PI_001();
+        String testId = "Android_PI_008";
+        //*****TEST
+        //Step_1
+        // Click sobre el nombre del paciente en la barrra azul.
+
+        // Se despliega la información del paciente.
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }
+    /**
+     * android-PI-009 - P - Info Paciente - Acceso a Información de Paciente
+     * Precondition: android-P-009
+     */
+
+    public void Android_PI_009(){
+        Android_PI_001();
+        String testId = "Android_PI_009";
+        //*****TEST
+        //Step_1
+        // Click sobre el nombre del paciente en la barrra azul.
+
+        // Se despliega la información del paciente.
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+    }
+
+    /**
+     * android-PI-010 - P - Info Paciente - Acceso a Información de Paciente
+     * Precondition: android-P-010
+     */
+
+    public void Android_PI_010(){
+        Android_PI_001();
+        String testId = "Android_PI_010";
+        //*****TEST
+        //Step_1
+        // Click sobre el nombre del paciente en la barrra azul.
+
+        // Se despliega la información del paciente.
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
 }

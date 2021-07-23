@@ -1,13 +1,17 @@
 package Actions;
 
 import Utilities.Utils;
+import com.sun.corba.se.impl.encoding.EncapsInputStream;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEventFlag;
+import io.appium.java_client.android.nativekey.KeyEventMetaModifier;
 import io.appium.java_client.touch.offset.PointOption;
 import io.qameta.allure.Allure;
 
+import javafx.scene.input.KeyCode;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
@@ -18,6 +22,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import javax.xml.crypto.dsig.keyinfo.KeyValue;
 import java.io.ByteArrayInputStream;
 import java.security.Key;
 
@@ -79,26 +84,94 @@ public class FlujoPrincipalActions {
         }
     }
 
+
     /**
      * <p> Método para rellenar el input buscar </p>
      * @throws Exception
      */
-    public void RellenarMapaBuscador(String buscarPaciente){
+        public void RellenarMapaBuscador(String buscarPaciente){
         Utils.RestaurarTiempoDeEspera();
         try {
             Utils.SearchAndroidElement("Mapa.InputBuscar").click();
-            Utils.SearchAndroidElement("Mapa.InputBuscar").sendKeys(buscarPaciente);
+            while(!androidDriver.isKeyboardShown()){}
+            androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_3));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_3));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_9));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_3));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_8));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_2));
+            //Utils.EscribeTeclado(buscarPaciente);
+            //Utils.SearchAndroidElement("Mapa.InputBuscar").sendKeys(buscarPaciente);
+            commonActions.PrintReportMessage("Se rellenó correctamente el input Buscar con el valor: "+buscarPaciente);
+            }catch(Exception e){
+            CommonActions.CapturadorExcepcion("RellenarMapaBuscador.png", "No se encuentra el input Buscar");
+            throw e;
+        }
+        }
 
+
+    /**
+     * <p> Método para rellenar el input buscar Paciente Nombre</p>
+     * @throws Exception
+     */
+    public void RellenarMapaBuscadorPacienteNombre(String buscarPaciente){
+        Utils.RestaurarTiempoDeEspera();
+        try {
+            Utils.SearchAndroidElement("Mapa.InputBuscar").click();
+            while(!androidDriver.isKeyboardShown()){}
+            androidDriver.pressKey(new KeyEvent(AndroidKey.CAPS_LOCK));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.CAPS_LOCK));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.P));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.R));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.U));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.E));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.B));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.A));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.SPACE));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.A));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.U));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.T));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.O));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.M));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.A));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.T));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.I));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.Z));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.A));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.C));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.I));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.O));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.N));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.SPACE));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.A));
+            androidDriver.pressKey(new KeyEvent(AndroidKey.U));
+            //Utils.EscribeTeclado(buscarPaciente);
+            //Utils.SearchAndroidElement("Mapa.InputBuscar").sendKeys(buscarPaciente);
             commonActions.PrintReportMessage("Se rellenó correctamente el input Buscar con el valor: "+buscarPaciente);
         }catch(Exception e){
             CommonActions.CapturadorExcepcion("RellenarMapaBuscador.png", "No se encuentra el input Buscar");
             throw e;
         }
-
-
     }
 
     /**
+     * <p> Método para comenzar la búsqueda de pacientes en el input buscar </p>
+     * @throws Exception
+     */
+    public void BuscarPaciente(){
+        try {
+            Utils.SearchAndroidElement("Mapa.InputBuscar").click();
+            Utils.SearchAndroidElement("Mapa.InputBuscar").click();
+            commonActions.TapEnterKeyboard();
+            commonActions.PrintReportMessage("Se inicia la búsqueda de paciente correctamente");
+        }catch(Exception e){
+            commonActions.CapturadorExcepcion("BuscarPaciente.png", "Error al intentar buscar paciente");
+            throw e;
+        }
+
+    }
+
+     /**
      * <p> Método para pulsa botón login </p>
      * @throws Exception
      */
@@ -109,6 +182,21 @@ public class FlujoPrincipalActions {
 
         }catch(Exception e){
             commonActions.CapturadorExcepcion("PulsarBotonLogin.png", "No se pudo pulsar botón Login");
+            throw e;
+        }
+    }
+
+    /**
+     * <p> Método para pulsa botón root </p>
+     * @throws Exception
+     */
+    public void PulsarBotonRoot(){
+        try {
+            utils.SearchAndroidElement("LoginUno.BotonRoot").click();
+            commonActions.PrintReportMessage("Se pulsó botón root correctamente");
+
+        }catch(Exception e){
+            commonActions.CapturadorExcepcion("PulsarBotonRoot.png", "No se pudo pulsar botón Root");
             throw e;
         }
     }

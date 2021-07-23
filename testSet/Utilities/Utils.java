@@ -2,6 +2,8 @@ package Utilities;
 
 import Actions.*;
 import Conditions.*;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -13,6 +15,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
@@ -48,9 +52,9 @@ public class Utils {
         try
         {
             //Maquina Windows local
-            //final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
+            final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
             //Maquina MAC PRE
-            final String URL_STRING = "http://0.0.0.0:4723/wd/hub";
+            //final String URL_STRING = "http://0.0.0.0:4723/wd/hub";
             url = new URL(URL_STRING);
 
             capabilities = new DesiredCapabilities();
@@ -73,25 +77,23 @@ public class Utils {
         }
     }
 
-    public void Instanciador_Android(){
-        try
-        {
-            //capabilities
-            //Maquina Windows local
-            //final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
-            //Maquina MAC PRE
-            final String URL_STRING = "http://0.0.0.0:4723/wd/hub";
-            sistemaOperativo = "ANDROID";
+    public void Instanciador_Android() throws MalformedURLException {
+        //capabilities
+        //Maquina Windows local
+        final String URL_STRING = "http://127.0.0.1:4723/wd/hub";
+        //Maquina MAC PRE
+        //final String URL_STRING = "http://0.0.0.0:4723/wd/hub";
+        sistemaOperativo = "ANDROID";
 
-            capabilities = new DesiredCapabilities();
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
-            capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
-            capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+        capabilities = new DesiredCapabilities();
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9");
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 
 
-            ///-> Seleccionar uno de los 2 métodos:
+        ///-> Seleccionar uno de los 2 métodos:
 
-            ///->1. Inicio de APP instalada en el dispositivo emulado
+        ///->1. Inicio de APP instalada en el dispositivo emulado
 /*
             capabilities.setCapability("appPackage", "com.radmas.iycp.casiopea.pre");
             capabilities.setCapability("automationName","UiAutomator2");
@@ -100,49 +102,48 @@ public class Utils {
             capabilities.setCapability("noReset", false);
 */
 
-            ///->2. Inicio para instalar APP desde un directorio
-            ///Local
-            //capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\temporal\\Documents\\GitHub\\quiron-app-automation\\apk\\app-casiopeaPre-debug.apk");
-            ///Maquina MAC-PRE
-            capabilities.setCapability(MobileCapabilityType.APP, "Users\\casiopea.mobility\\app-casiopeaPre-debug.apk");
+        ///->2. Inicio para instalar APP desde un directorio
+        ///Local
+        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\casiopea.mobility\\casiopeaMobility.apk");
+        ///Maquina MAC-PRE
+        //capabilities.setCapability(MobileCapabilityType.APP, "Users\\casiopea.mobility\\app-casiopeaPre-debug.apk");
 
-            ///Appium logs
-            //capabilities.setCapability("browserstack.appiumLogs", "true");
-            //capabilities.setCapability("browserstack.deviceLogs", "true");
+        ///Appium logs
+        //capabilities.setCapability("browserstack.appiumLogs", "true");
+        //capabilities.setCapability("browserstack.deviceLogs", "true");
 
-            //Lectura de ficheros CSV
-            objRep = new ObjectRepositoryUtils();
-            objRep.TestDataReader("ObjectRepository.csv");
-            dataRep = new TestDataUtils();
-            dataRep.TestDataReader("DataRepository.csv");
-
-
-            androidDriver = new AndroidDriver<>(capabilities);
-            androidDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            //Instanciador clases
-            commonActions = new CommonActions();
-            commonConditions = new CommonConditions();
-            flujo_principalActions = new FlujoPrincipalActions();
-            flujo_principalConditions = new FlujoPrincipalConditions();
-            pacienteActions = new PacienteActions();
-            pacienteConditions = new PacienteConditions();
-            p_info_pacienteActions = new PInfoPacienteActions();
-            p_info_pacienteConditions = new PInfoPacienteConditions();
-            hospitalizacionActions = new HospitalizacionActions();
-            hospitalizacionConditions = new HospitalizacionConditions();
-
-            pHistoriaActions = new PHistoriaActions();
-            pHistoriaConditions = new PHistoriaConditions();
-
-            rowIdentifier = "TESTID";
+        //Lectura de ficheros CSV
+        objRep = new ObjectRepositoryUtils();
+        objRep.TestDataReader("ObjectRepository.csv");
+        dataRep = new TestDataUtils();
+        dataRep.TestDataReader("DataRepository.csv");
 
 
-            sqlDBC = new SQLDatabaseConnection();
+        androidDriver = new AndroidDriver<>(capabilities);
+        androidDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //Instanciador clases
+        commonActions = new CommonActions();
+        commonConditions = new CommonConditions();
+        flujo_principalActions = new FlujoPrincipalActions();
+        flujo_principalConditions = new FlujoPrincipalConditions();
+        pacienteActions = new PacienteActions();
+        pacienteConditions = new PacienteConditions();
+        p_info_pacienteActions = new PInfoPacienteActions();
+        p_info_pacienteConditions = new PInfoPacienteConditions();
+        hospitalizacionActions = new HospitalizacionActions();
+        hospitalizacionConditions = new HospitalizacionConditions();
 
-            //Allure
-            commonActions.PrintReportMessage("Instanciador iniciado correctamente");
+        pHistoriaActions = new PHistoriaActions();
+        pHistoriaConditions = new PHistoriaConditions();
+        rowIdentifier = "TESTID";
 
-            //csv
+
+        sqlDBC = new SQLDatabaseConnection();
+
+        //Allure
+        commonActions.PrintReportMessage("Instanciador iniciado correctamente");
+
+        //csv
             /*
             objRep = new ObjectRepositoryUtils("ObjectRepository.properties");
             objRep.TestDataReader("ObjectRepository.csv");
@@ -152,11 +153,6 @@ public class Utils {
             */
 
 
-        } catch (MalformedURLException malformedURLException) {
-                commonActions.PrintReportMessage("Error al iniciar instaciador");
-                malformedURLException.printStackTrace();
-        }
-
     }
 
     public boolean EncontrarElemento(By by)
@@ -165,9 +161,21 @@ public class Utils {
         element = androidDriver.findElement(by);
         return true;
     }
+// Metodo para escribir mediante teclado
+    public static void EscribeTeclado(String string){
+
+        char[] chars = new char[0];
+
+        for (int x = 0 ; x < string.length(); x++){
+            char c = string.charAt(x);
+            //Arrays.stream(chars).limit(chars.length);
+            chars[chars.length - 1] = c;
+        }
+     //   KeyEvent[] keaFinal = getEvents(chars);
+}
 
 
-//Metodos para cambiar el tiempo de espera de la aplicación
+    //Metodos para cambiar el tiempo de espera de la aplicación
     public static void RestaurarTiempoDeEspera(){
         androidDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }

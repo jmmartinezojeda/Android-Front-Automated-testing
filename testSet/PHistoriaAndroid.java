@@ -69,45 +69,6 @@ public class PHistoriaAndroid {
     }
 
     /**
-     * android-PH-002 - PHistoria - Historia Alergias
-     * Precondition: android-P-001
-     */
-
-    public void Android_PH_002(){
-        String testId = "Android_PH_002";
-        //*****TEST
-        //Step_1
-        //Preconditions
-        // Click sobre el símbolo de Alergias de color rojo.
-        pHistoriaActions.PulsarAlergias();
-        // Se muestran las alergias del paciente
-        pHistoriaConditions.PulsadoAlergias();
-
-        //*Reporte del caso de prueba
-        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
-
-    }
-
-    /**
-     * android-PH-009 - PHistoria - Evolución
-     * Precondition: -
-     */
-
-    public void Android_PH_009(){
-        String testId = "Android_PH_009";
-        //*****TEST
-        //Step_1
-        //Preconditions
-        // Click sobre el símbolo de Evolución (ojo)
-        pHistoriaActions.PulsarEvolucion();
-        // Se muestran las alergias del paciente
-        pHistoriaConditions.PulsadoEvolucion();
-
-        //*Reporte del caso de prueba
-        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
-    }
-
-    /**
      * android-PH-001_2 - PHistoria - Salir Historia Covid19
      * Precondition: android-PH-001_1
      */
@@ -122,6 +83,26 @@ public class PHistoriaAndroid {
         commonActions.PulsarBotonBack();
         // Se cierra Historia Covid19
         pHistoriaConditions.CerradoCuadro("Historial Covid");
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
+
+    }
+
+    /**
+     * android-PH-002 - PHistoria - Historia Alergias
+     * Precondition: android-P-001
+     */
+
+    public void Android_PH_002(){
+        String testId = "Android_PH_002";
+        //*****TEST
+        //Step_1
+        //Preconditions
+        // Click sobre el símbolo de Alergias de color rojo.
+        pHistoriaActions.PulsarAlergias();
+        // Se muestran las alergias del paciente
+        pHistoriaConditions.PulsadoAlergias();
 
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
@@ -146,6 +127,25 @@ public class PHistoriaAndroid {
         //*Reporte del caso de prueba
         commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
 
+    }
+
+    /**
+     * android-PH-009 - PHistoria - Evolución
+     * Precondition: -
+     */
+
+    public void Android_PH_009(){
+        String testId = "Android_PH_009";
+        //*****TEST
+        //Step_1
+        //Preconditions
+        // Click sobre el símbolo de Evolución (ojo)
+        pHistoriaActions.PulsarEvolucion();
+        // Se muestran las alergias del paciente
+        pHistoriaConditions.PulsadoEvolucion();
+
+        //*Reporte del caso de prueba
+        commonActions.CapturadorExcepcion(testId+".png", testId+" - OK");
     }
 
 

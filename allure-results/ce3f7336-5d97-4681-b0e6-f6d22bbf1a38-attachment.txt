@@ -1,0 +1,2 @@
+Se rellenó correctamente el input Login/Codgio confirmación con el valor: 250527
+-----------------------------------------------

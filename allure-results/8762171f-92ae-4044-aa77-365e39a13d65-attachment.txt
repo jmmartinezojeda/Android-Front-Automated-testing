@@ -1,0 +1,2 @@
+El botón 'Ver más/menos' se pulsa correctamente
+-----------------------------------------------

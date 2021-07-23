@@ -1,0 +1,2 @@
+Paciente Rellenado incorrectamente en Buscar
+-----------------------------------------------

@@ -1,0 +1,2 @@
+Color elemento Estacion seleccionada -> R: 51 G: 51 B: 51
+-----------------------------------------------

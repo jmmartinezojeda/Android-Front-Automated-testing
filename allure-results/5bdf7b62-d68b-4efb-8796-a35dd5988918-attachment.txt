@@ -1,0 +1,2 @@
+No se muestra la pantalla de introducir código SMS
+-----------------------------------------------

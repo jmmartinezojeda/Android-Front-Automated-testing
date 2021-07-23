@@ -1,0 +1,2 @@
+No se muestra la lista de centros de cambio de centro, correctamente
+-----------------------------------------------

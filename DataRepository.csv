@@ -1,21 +1,21 @@
 ﻿###DATAREPOSITORY-NUMOBJETS:16 -> [TestID;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#] <- ###
 TESTID;usuarioLoginUno;versionApp;usuarioLoginDos;passwordLoginDos;centroPorDefecto;listaCentrosUsuario;centroCambio;estacionDefecto;buscarPacienteNombre;buscarPacienteNhc;doctorPaciente;telefonoPaciente;numResulH;asignacionSeleccionada;ElementoListaSeleccion;ambitoGlosario;opcionesFiltroHistoria;resultadoFiltroHistoria
 ###FP###
-Android_FP_001;adalvarez.ext;Versión 4.0.125;#;#;#;#;#;#;#;#;#
-Android_FP_002_1;#;#;adalvarez.ext;AutoQuiron1;HOSPITAL INFANTA ELENA;HOSPITAL INFANTA ELENA,HOSPITAL REY JUAN CARLOS,FUNDACION JIMENEZ DIAZ,HOSPITAL GENERAL DE VILLALBA;HOSPITAL INFANTA ELENA;Hospitalizacion;#;#;#
-Android_FP_002_2;#;#;adalvarez.ext;AutoQuiron1;HOSPITAL REY JUAN CARLOS;HOSPITAL INFANTA ELENA,HOSPITAL REY JUAN CARLOS,FUNDACION JIMENEZ DIAZ,HOSPITAL GENERAL DE VILLALBA;HOSPITAL INFANTA ELENA;Hospitalizacion;#;#;#
+Android_FP_001;delega6;Versión 4.0.126;#;#;#;#;#;#;#;#;#
+Android_FP_002_1;#;#;delega6;Cambiar.2020;FUNDACION JIMENEZ DIAZ;FUNDACION JIMENEZ DIAZ,HOSPITAL INFANTA ELENA,HOSPITAL REY JUAN CARLOS,HOSPITAL GENERAL DE VILLALBA,Hospital Quirónsalud Córdoba,Hospital Quirónsalud del Vallés,Hospital Quirónsalud Vitoria;HOSPITAL REY JUAN CARLOS;Hospitalizacion;#;#;#
+Android_FP_002_2;#;#;delega6;Cambiar.2020;FUNDACION JIMENEZ DIAZ;FUNDACION JIMENEZ DIAZ,HOSPITAL INFANTA ELENA,HOSPITAL REY JUAN CARLOS,HOSPITAL GENERAL DE VILLALBA,Hospital Quirónsalud Córdoba,Hospital Quirónsalud del Vallés,Hospital Quirónsalud Vitoria;HOSPITAL REY JUAN CARLOS;Hospitalizacion;#;#;#
 Android_FP_003;#;#;#;#;#;#;#;#;#;#;#
-Android_FP_006;#;#;#;#;#;HOSPITAL INFANTA ELENA,HOSPITAL REY JUAN CARLOS,FUNDACION JIMENEZ DIAZ,HOSPITAL GENERAL DE VILLALBA;HOSPITAL REY JUAN CARLOS;Urgencias;#;#;#;#;#;#
-Android_FP_008;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;#;#;#;#
-Android_FP_009;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;#;#;#;#
+Android_FP_006;#;#;#;#;#;FUNDACION JIMENEZ DIAZ,HOSPITAL INFANTA ELENA,HOSPITAL REY JUAN CARLOS,HOSPITAL GENERAL DE VILLALBA,Hospital Quirónsalud Córdoba,Hospital Quirónsalud del Vallés,Hospital Quirónsalud Vitoria;HOSPITAL INFANTA ELENA;Hospitalizacion;#;#;#;#;#;#
+Android_FP_008;#;#;#;#;#;#;#;#;prueba automatizacion au;339382;#;#;#;#
+Android_FP_009;#;#;#;#;#;#;#;#;PRUEBA AUTOMATIZACION AU;339382;#;#;#;#
 ###P###
-Android_P_010;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;#;#;#;#
-Android_P_003_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;Urgencias
-Android_P_003_2;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;#;#;#;#;#
+Android_P_010;#;#;#;#;#;#;#;#;PRUEBA AUTOMATIZACION AU;339382;#;#;#;#
+Android_P_003_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;Hospitalizacion
+Android_P_003_2;#;#;#;#;#;#;#;#;PRUEBA AUTOMATIZACION AU;339382;#;#;#;#
 ###PI###
-Android_PI_001;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;#;#;#;#
-Android_PI_002;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;Teresa Ribeiro;#;#;#
-Android_PI_003;#;#;#;#;#;#;#;#;NO TOCAR PREUBAS AUTOMATICAS MOBILITY;20012430;Teresa Ribeiro;#;#;#
+Android_PI_001;#;#;#;#;#;#;#;#;PRUEBA AUTOMATIZACION AU;339382;#;#;#;#
+Android_PI_002;#;#;#;#;#;#;#;#;PRUEBA AUTOMATIZACION AU;339382;Teresa Ribeiro;#;#;#
+Android_PI_003;#;#;#;#;#;#;#;#;PRUEBA AUTOMATIZACION AU;339382;Teresa Ribeiro;649500531;#;#
 ###H###
 Android_H_003_1;#;#;#;#;#;#;#;#;#;#;#;#;0;#;#;#
 Android_H_006_4_1;#;#;#;#;#;#;#;#;#;#;#;#;#;Mis pacientes;#;#
@@ -33,7 +33,7 @@ Android_H_004_2_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;CIRUGÍA GENERAL Y DIGESTIVO;#
 Android_H_004_2_2;#;#;#;#;#;#;#;#;#;#;#;#;#;#;CARDIOLOGÍA;#
 Android_H_005_2_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;UE-CIRUGÍA MAYOR AMBULATORIA;#
 Android_H_005_2_2;#;#;#;#;#;#;#;#;#;#;#;#;#;#;UE-HOSP. OBSTÉTRICA;#
-Android_H_005_2_3;#;#;#;#;#;#;#;#;#;#;#;#;#;#;UE-HOSP. PEDIÁTRICA;#
+Android_H_005_2_3;#;#;#;#;#;#;#;#;#;#;#;#;#;#;UE-H. DIA PEDIATRIA;#
 Android_H_005_4_1;#;#;#;#;#;#;#;#;#;#;#;#;#;TODO;#;#
 ###P_H###
 Android_PH_012_2_1;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;#;NO,SI,NO,NO,NO;#
